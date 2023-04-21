@@ -6,7 +6,7 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:05:46 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/21 12:24:21 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:07:47 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_isascii(int c)
 {
-	if (c <= 0 && c >= 128)
+	if (c >= 0 && c <= 127)
 		return (1);
-	return (0);
+	else
+		return (0);
 }

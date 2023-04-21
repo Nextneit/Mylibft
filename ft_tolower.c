@@ -6,22 +6,15 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:26:01 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/21 12:20:25 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:10:35 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int *str)
+int	ft_tolower(int c)
 {
-	int	a;
-
-	a = 0;
-	while (str[a] != '\0')
-	{
-		if (str[a] >= 65 && str[a] <= 90)
-			str[a] += 32;
-		a++;
-	}
-	return (str);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }

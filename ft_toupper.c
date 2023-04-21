@@ -6,22 +6,15 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:05:20 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/21 12:20:42 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:12:07 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int *str)
+int	ft_toupper(int c)
 {
-	int	a;
-
-	a = 0;
-	while (str[a] != '\0')
-	{
-		if (str[a] >= 97 && str[a] <= 122)
-			str[a] -= 32;
-		a++;
-	}
-	return (str);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
