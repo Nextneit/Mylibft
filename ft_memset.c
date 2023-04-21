@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 15:04:12 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/21 15:28:23 by ncruz-ga         ###   ########.fr       */
+/*   Created: 2023/04/21 15:38:46 by ncruz-ga          #+#    #+#             */
+/*   Updated: 2023/04/21 16:26:50 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned int	counter;
+	size_t			counter;
+	unsigned char	*str;
 
+	str = (unsigned char *)b;
 	counter = 0;
-	while ((s1[counter] != '\0' || s2[counter] != '\0') && (counter < n))
+	while (counter < len)
 	{
-		if ((unsigned char)s1[counter] < (unsigned char)s2[counter])
-			return (-1);
-		if ((unsigned char)s1[counter] > (unsigned char)s2[counter])
-			return (1);
+		str[counter] = (unsigned char)c;
 		counter++;
 	}
-	return (0);
+	return (b);
 }
