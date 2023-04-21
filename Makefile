@@ -9,6 +9,8 @@ FILES = ft_isalnum.c\
 		ft_strncmp.c\
 		ft_tolower.c\
 		ft_toupper.c\
+		ft_memset.c\
+		ft_bzero.c\
 
 OBJS = $(FILES:.c=.o)
 
