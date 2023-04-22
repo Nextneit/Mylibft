@@ -11,6 +11,9 @@ FILES = ft_isalnum.c\
 		ft_toupper.c\
 		ft_memset.c\
 		ft_bzero.c\
+		ft_memmove.c\
+		ft_memcpy.c\
+		ft_strlcpy.c\
 
 OBJS = $(FILES:.c=.o)
 
