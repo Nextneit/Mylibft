@@ -14,7 +14,8 @@ FILES = ft_isalnum.c\
 		ft_memmove.c\
 		ft_memcpy.c\
 		ft_strlcpy.c\
-
+		ft_strlcat.c\
+		
 OBJS = $(FILES:.c=.o)
 
 all : $(NAME)
