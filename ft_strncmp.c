@@ -6,11 +6,10 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:04:12 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/21 15:28:23 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:45:41 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

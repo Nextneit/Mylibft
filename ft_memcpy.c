@@ -6,11 +6,10 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:56:31 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/22 16:36:04 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:45:57 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
