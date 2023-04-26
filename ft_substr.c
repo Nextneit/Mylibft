@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 15:46:52 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/25 12:17:51 by ncruz-ga         ###   ########.fr       */
+/*   Created: 2023/04/26 12:53:34 by ncruz-ga          #+#    #+#             */
+/*   Updated: 2023/04/26 15:37:05 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	char	*substr;
+	size_t	size;
 
-	i = 0;
-	if (!*needle)
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
-	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && i + j < len)
-		{
-			if (needle[++j] == 0)
-				return ((char *)&haystack[i]);
-		}
-		i++;
-	}
-	return (0);
+	size = ft_strlen(s);
+	if (size <= start)
+		return (ft_strdup(""));
+	if (size - start < len)
+		len = size - start;
+	substr = (char *) malloc(len + 1);
+	if (!substr)
+		return (0);
+	ft_memcpy(substr, s + start, len);
+	substr[len] = '\0';
+	return (substr);
 }
