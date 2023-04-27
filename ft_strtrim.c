@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 17:56:31 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/27 12:05:53 by ncruz-ga         ###   ########.fr       */
+/*   Created: 2023/04/27 12:28:38 by ncruz-ga          #+#    #+#             */
+/*   Updated: 2023/04/27 15:42:58 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		counter;
-	char		*dest;
-	char		*srce;
+	size_t	len;
+	size_t	count;
+	size_t	counter;
 
-	if (!src && !dst)
+	count = 0;
+	len = ft_strlen(s1);
+	counter = len;
+	if (!s1 || !set)
 		return (0);
-	counter = 0;
-	dest = (char *)dst;
-	srce = (char *)src;
-	while (counter < n)
-	{
-		dest[counter] = (char)srce[counter];
-		counter++;
-	}
-	return (dst);
+	if (*s1 == '\0' && len == 0)
+		return (ft_strdup(""));
+	while (ft_strchr(set, s1[count]))
+		count++;
+	while (ft_strrchr(set, s1[counter]))
+		counter--;
+	return (ft_substr(s1, count, counter - count + 1));
 }

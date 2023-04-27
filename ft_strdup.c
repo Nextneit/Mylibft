@@ -6,7 +6,7 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:34:37 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/26 14:52:34 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:33:22 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*ft_strdup(const char *s1)
 {
 	size_t	len;
-	void	*s2;
+	char	*s2;
 
 	len = ft_strlen (s1) + 1;
-	s2 = malloc (len * sizeof (char));
+	s2 = malloc(len * sizeof(char));
 	if (!s2)
 		return (0);
-	ft_memcpy (s2, s1, len);
+	ft_memcpy(s2, s1, len);
 	return ((char *)s2);
 }

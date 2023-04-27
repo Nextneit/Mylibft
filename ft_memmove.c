@@ -6,7 +6,7 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:18:23 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/22 16:33:07 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:34:46 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len--)
 		{
-				dst1[len] = src1[len];
+			dst1[len] = src1[len];
 		}
 	}	
 	else

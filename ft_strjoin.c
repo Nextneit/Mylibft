@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 17:56:31 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/27 12:05:53 by ncruz-ga         ###   ########.fr       */
+/*   Created: 2023/04/26 18:05:04 by ncruz-ga          #+#    #+#             */
+/*   Updated: 2023/04/27 12:36:34 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t		counter;
-	char		*dest;
-	char		*srce;
+	size_t	size;
+	char	*s3;
 
-	if (!src && !dst)
+	size = ft_strlen(s1) + ft_strlen(s2);
+	s3 = (char *)malloc(size + 1);
+	if (!s3)
 		return (0);
-	counter = 0;
-	dest = (char *)dst;
-	srce = (char *)src;
-	while (counter < n)
-	{
-		dest[counter] = (char)srce[counter];
-		counter++;
-	}
-	return (dst);
+	ft_memcpy(s3, s1, ft_strlen(s1));
+	ft_memcpy(s3 + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (s3);
 }
