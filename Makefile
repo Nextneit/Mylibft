@@ -34,22 +34,34 @@ FILES = ft_isalnum.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 		ft_split.c\
+
+FILES_BONUS = ft_lstnew_bonus.c\
+				ft_lstadd_front_bonus.c\
+				ft_lstsize_bonus.c\
+				ft_lstlast_bonus.c\
+				ft_lstadd_back_bonus.c\
+				ft_lstdelone_bonus.c\
 		
 OBJS = $(FILES:.c=.o)
+
+OBJ_BONUS = $(FILES_BONUS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS) 
 $(OBJS) : $(FILES)
 	gcc $(FLAGS) -c $(FILES)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJ_BONUS)
 
 fclean:
-	rm -f $(NAME) $(OBJS)
+	rm -f $(NAME) $(OBJS) $(OBJ_BONUS)
 
 re: all
 
-.PHONY : all re fclean clean
+bonus: $(OBJ_BONUS) $(OBJ)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
+.PHONY : all re fclean clean bonus
