@@ -6,7 +6,7 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:37:34 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/05/04 15:55:49 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:56:50 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlist;
 	t_list	*actual;
+	void	*aux;
 
 	if (!lst)
 		return (NULL);
 	newlist = 0;
-	while (lst)
+	while (lst != NULL)
 	{
-		actual = ft_lstnew(f(lst->content));
-		if (actual)
+		aux = f(lst->content);
+		actual = ft_lstnew(aux);
+		if (actual != NULL)
 		{
 			ft_lstadd_back(&newlist, actual);
 			lst = lst->next;
@@ -31,6 +33,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		else
 		{
 			ft_lstclear(&newlist, del);
+			del(aux);
 			return (0);
 		}
 	}

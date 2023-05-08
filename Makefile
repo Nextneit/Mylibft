@@ -62,7 +62,7 @@ clean:
 fclean:
 	rm -f $(NAME) $(OBJS) $(OBJ_BONUS)
 
-re: all
+re: fclean all
 
 bonus: $(OBJ_BONUS) $(OBJ)
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
