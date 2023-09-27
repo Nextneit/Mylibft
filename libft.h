@@ -6,7 +6,7 @@
 /*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:19:01 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/05/04 15:30:46 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:01:12 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -63,5 +67,17 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_putchar(char c);
+int		ft_printstr(char *str);
+int		ft_printdec(long long int n);
+int		ft_printhexa(unsigned long long n, char c);
+int		ft_printptr(unsigned long long n);
+int		ft_printunsigned(unsigned long long int n);
+int		ft_printf(char const *content, ...);
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+void	*ft_calloc_gnl(size_t count, size_t size);
+int		ft_strchr_gnl(const char *s, int c);
+size_t	ft_strlen_gnl(const char *str);
 
 #endif
