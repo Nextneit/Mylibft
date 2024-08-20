@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ncruz-ga <ncruz-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 12:36:19 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/09/27 11:55:11 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:47:47 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ int	ft_printhexa(unsigned long long n, char c)
 	}
 	return (count);
 }
-
-/* int main()
-{
-	ft_printhexa(100, 'x');
-}
- */

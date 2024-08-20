@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ncruz-ga <ncruz-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 12:18:54 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/25 15:01:24 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:44:06 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 int	ft_atoi(const char *str)
 {
-	int	a;
+	int	i;
 	int	num;
 	int	sign;
 
-	a = 0;
+	i = 0;
 	num = 0;
 	sign = 0;
-	while (str[a] == 32 || (str[a] >= 9 && str[a] <= 13))
-		a++;
-	if (str[a] == '+' || str[a] == '-')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str[a] == '-')
+		if (str[i] == '-')
 			sign++;
-		a++;
+		i++;
 	}
-	while (str[a] && (str[a] >= '0' && str[a] <= '9'))
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
-			num = num * 10 + (str[a] - '0');
-			a++;
+		num = num * 10 + (str[i] - '0');
+		i++;
 	}
 	if (sign % 2 == 1)
 		return (num * -1);

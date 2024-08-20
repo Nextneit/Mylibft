@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ncruz-ga <ncruz-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:59:18 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/05/04 11:42:21 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:45:34 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*ult;
+	t_list	*last;
 
 	if (*lst != 0)
 	{
-		ult = ft_lstlast(*lst);
-		ult->next = new;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
 	else
 		*lst = new;

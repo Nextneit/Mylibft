@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ncruz-ga <ncruz-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:18:23 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/04/27 18:34:46 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:47:19 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		{
 			dst1[len] = src1[len];
 		}
-	}	
+	}
 	else
 	{
 		ft_memcpy(dst, src, len);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncruz-ga <ncruz-ga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: ncruz-ga <ncruz-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:27:59 by ncruz-ga          #+#    #+#             */
-/*   Updated: 2023/09/27 11:55:14 by ncruz-ga         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:47:41 by ncruz-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,3 @@ int	ft_printf(char const *content, ...)
 	}
 	return (va_end(args), c);
 }
-
-/*
-int	main(void)
-{
-	int	c;
-
-	c = ft_printf("hol%c %s %p %d %i %u %x %X %% \n", 'a', "como estas",
-			75123756, 420, 500, 783189, 15, 15);
-	ft_printf("%d", c);
-	return (0);
-}
-*/
