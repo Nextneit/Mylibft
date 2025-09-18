@@ -48,26 +48,53 @@ FILES = ./ft_is/ft_isalnum.c\
 		./ft_printf/ft_printnbr.c\
 		./ft_printf/ft_printf.c\
 		./get_next_line/get_next_line_bonus.c\
-		./get_next_line/get_next_line_utils_bonus.c\
-		
-OBJS = $(FILES:.c=.o)
+		./get_next_line/get_next_line_utils_bonus.c
+
+OBJDIR = obj
+OBJS = $(addprefix $(OBJDIR)/, $(notdir $(FILES:.c=.o)))
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS) 
-$(OBJS) : $(FILES)
-	gcc $(FLAGS) -c $(FILES)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(NAME) : $(OBJDIR) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+$(OBJDIR)/%.o: ./ft_is/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./str_utils/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./utils/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./memory/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./fd_write/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./list/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./ft_printf/%.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: ./get_next_line/%.c
+	gcc $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
 
 fclean:
 	rm -f $(NAME) $(OBJS)
+	rm -rf $(OBJDIR)
 
 re: fclean all
 
-bonus: $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+bonus: $(OBJDIR) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 .PHONY : all re fclean clean
